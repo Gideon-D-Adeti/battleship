@@ -6,6 +6,7 @@
     /* Colors */
     --neutral-1: #f5f5f5;
     --neutral-2: #d4d4d4;
+    --neutral-3: #737373;
 
     /* Standard pxs */
     --x-big: 64px;
@@ -106,6 +107,10 @@ main .gameboards {
     background-color: var(--neutral-2);
     border: none;
     font-weight: bold;
+}
+
+.ship {
+    background-color: var(--neutral-3);
 }
 
 main .randomize {
