@@ -4,7 +4,8 @@
 /* Define custom variables */
 :root {
     /* Colors */
-    --neutral: #f5f5f5;
+    --neutral-1: #f5f5f5;
+    --neutral-2: #d4d4d4;
 
     /* Standard pxs */
     --x-big: 64px;
@@ -62,7 +63,7 @@ body header {
 
 header .notification {
     padding: var(--small) var(--normal);
-    background-color: var(--neutral);
+    background-color: var(--neutral-1);
     min-width: 30%;
 }
 
@@ -86,21 +87,38 @@ main .gameboards {
 }
 
 .gameboards .gameboard {
-    width: 420px;
-    height: 420px;
-    border: 1px solid black;
+    display: grid;
+    grid-template-columns: repeat(11, 40px);
+    grid-template-rows: repeat(11, 40px);
+    margin-top: var(--small);
+    border: 1px solid var(--neutral-2);
+    border-radius: var(--x-small);
+}
+
+.gameboard .cell {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid var(--neutral-2);
+}
+
+.cell.label {
+    background-color: var(--neutral-2);
+    border: none;
+    font-weight: bold;
 }
 
 main .randomize {
     display: flex;
     align-items: center;
     gap: var(--x-small);
-    background-color: var(--neutral);
+    background-color: var(--neutral-2);
     max-width: fit-content;
     padding: 2px var(--small);
     border-radius: var(--x-small);
     transition: transform 0.3s;
     cursor: pointer;
+    will-change: contents;
 }
 
 .randomize:hover {
@@ -113,6 +131,10 @@ main .randomize {
 
 .randomize .mdi {
     font-size: 20px;
+}
+
+main .settings {
+    margin-top: var(--normal);
 }
 
 main .settings,
