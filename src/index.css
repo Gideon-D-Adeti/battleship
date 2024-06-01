@@ -109,8 +109,9 @@ main .gameboards {
     font-weight: bold;
 }
 
-.ship {
+.cell.ship {
     background-color: var(--neutral-3);
+    border: none;
 }
 
 main .randomize {
