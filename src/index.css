@@ -109,8 +109,13 @@ main .gameboards {
     font-weight: bold;
 }
 
-.cell.ship {
+.cell.player-ship {
     background-color: var(--neutral-3);
+    border: none;
+}
+
+.cell.computer-ship {
+    background-color: var(--neutral-2);
     border: none;
 }
 

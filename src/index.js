@@ -1,14 +1,12 @@
 import './index.css'
 import setupGame from './modules/setupGame'
-import createGameboard from './modules/createGameboard'
-import renderShips from './modules/renderShips'
 
 document.addEventListener('DOMContentLoaded', () => {
   const { player, computer } = setupGame()
 
-  createGameboard('player')
-  createGameboard('computer')
+  player.createBoard()
+  computer.createBoard()
 
-  renderShips(player)
-  // renderGameboard(computer)
+  player.renderBoard()
+  computer.renderBoard()
 })
