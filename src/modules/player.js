@@ -47,7 +47,9 @@ export default class Player {
           `.cell[data-row="${x + 1}"][data-col="${y + 1}"]`
         )
         if (this.gameboard.board[x][y] !== null) {
-          cell.classList.add(`${this.name}-ship`)
+          if (this.name !== 'computer') {
+            cell.classList.add(`${this.name}-ship`)
+          }
         }
       }
     }
