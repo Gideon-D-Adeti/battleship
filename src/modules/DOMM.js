@@ -1,8 +1,9 @@
-export default class domManipulation {
+export default class DOMManipulation {
   constructor () {
     this.notification = document.querySelector('.notification')
     this.startButton = document.querySelector('.start-button')
     this.computerBoard = document.querySelector('.computer .gameboard')
+    this.playerBoard = document.querySelector('.player .gameboard')
   }
 
   updateNotification (text) {
@@ -13,5 +14,11 @@ export default class domManipulation {
     this.startButton.style.display = 'none'
     this.computerBoard.style.filter = 'none'
     this.computerBoard.style.pointerEvents = 'auto'
+  }
+
+  getCellFromCoordinates (x, y, boardType) {
+    return document.querySelector(
+      `.${boardType} .gameboard .cell[data-row="${x + 1}"][data-col="${y + 1}"]`
+    )
   }
 }
