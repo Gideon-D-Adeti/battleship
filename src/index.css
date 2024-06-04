@@ -8,6 +8,8 @@
     --neutral-2: #d4d4d4;
     --neutral-3: #737373;
 
+    --red-1: #ef4444;
+
     /* Standard pxs */
     --x-big: 64px;
     --big: 32px;
@@ -144,6 +146,19 @@ main .gameboards {
 .cell.player-ship {
     background-color: var(--neutral-3);
     border: none;
+}
+
+.cell.attacked {
+    pointer-events: none;
+    border: none;
+}
+
+.cell.hit {
+    background-color: var(--red-1);
+}
+
+.cell.miss {
+    background-color: var(--neutral-1);
 }
 
 main .randomize {
