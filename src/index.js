@@ -76,9 +76,6 @@ function handleComputerTurn (player, computer) {
   const hit = computer.attack(player, x, y)
   cell.classList.add('attacked', hit ? 'hit' : 'miss')
 
-  console.table(player.gameboard.board)
-  console.table(player.gameboard.ships)
-
   if (player.gameboard.areAllShipsSunk()) {
     DOMM.updateNotification('You lose!')
   } else {
