@@ -36,7 +36,9 @@ function startGame (player, computer) {
   }
 
   // Event listener for player attacks
-  DOMM.computerBoard.addEventListener('click', (event) => {
+  DOMM.computerBoard.addEventListener('click', handlePlayerAttack)
+
+  function handlePlayerAttack (event) {
     if (currentPlayer === 'player') {
       const cell = event.target
       if (
@@ -49,6 +51,7 @@ function startGame (player, computer) {
         cell.classList.add('attacked', hit ? 'hit' : 'miss')
         if (computer.gameboard.areAllShipsSunk()) {
           DOMM.updateNotification('You won!')
+          DOMM.computerBoard.removeEventListener('click', handlePlayerAttack)
         } else {
           currentPlayer = 'computer'
           DOMM.updateNotification("Computer's turn, please wait.")
@@ -59,7 +62,7 @@ function startGame (player, computer) {
         }
       }
     }
-  })
+  }
 }
 
 function handleComputerTurn (player, computer) {
@@ -78,6 +81,7 @@ function handleComputerTurn (player, computer) {
 
   if (player.gameboard.areAllShipsSunk()) {
     DOMM.updateNotification('You lose!')
+    DOMM.computerBoard.removeEventListener('click', handlePlayerAttack)
   } else {
     currentPlayer = 'player'
     DOMM.updateNotification('Your turn.')
