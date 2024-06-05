@@ -31,7 +31,7 @@ function startGame (player, computer) {
     DOMM.updateNotification("The game started, computer's turn.")
     setTimeout(
       () => handleComputerTurn(player, computer),
-      Math.random() * (3000 - 1000) + 1000
+      Math.random() * (2500) + 500
     )
   }
 
@@ -57,7 +57,7 @@ function startGame (player, computer) {
           DOMM.updateNotification("Computer's turn, please wait.")
           setTimeout(
             () => handleComputerTurn(player, computer),
-            Math.random() * (3000 - 1000) + 1000
+            Math.random() * (2500) + 500
           )
         }
       }
@@ -81,7 +81,6 @@ function handleComputerTurn (player, computer) {
 
   if (player.gameboard.areAllShipsSunk()) {
     DOMM.updateNotification('You lose!')
-    DOMM.computerBoard.removeEventListener('click', handlePlayerAttack)
   } else {
     currentPlayer = 'player'
     DOMM.updateNotification('Your turn.')

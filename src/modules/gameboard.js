@@ -3,25 +3,14 @@ export default class Gameboard {
     this.board = Array(10)
       .fill(null)
       .map(() => Array(10).fill(null))
-    this.missedAttacks = []
     this.ships = []
   }
 
   placeShip (ship, x, y, orientation) {
-    // Check if the ship can be placed at the given coordinates
-    for (let i = 0; i < ship.length; i++) {
-      if (orientation === 'horizontal') {
-        if (y + i >= 10 || this.board[x][y + i] !== null) {
-          return false
-        }
-      } else if (orientation === 'vertical') {
-        if (x + i >= 10 || this.board[x + i][y] !== null) {
-          return false
-        }
-      }
+    if (!this.isValidPlacement(ship, x, y, orientation)) {
+      return false
     }
 
-    // Place the ship
     for (let i = 0; i < ship.length; i++) {
       if (orientation === 'horizontal') {
         this.board[x][y + i] = ship
@@ -29,7 +18,29 @@ export default class Gameboard {
         this.board[x + i][y] = ship
       }
     }
+
     this.ships.push(ship)
+    return true
+  }
+
+  isValidPlacement (ship, x, y, orientation) {
+    if (
+      x < 0 ||
+      y < 0 ||
+      (orientation === 'horizontal' && y + ship.length > 10) ||
+      (orientation === 'vertical' && x + ship.length > 10)
+    ) {
+      return false
+    }
+
+    for (let i = 0; i < ship.length; i++) {
+      if (orientation === 'horizontal' && this.board[x][y + i] !== null) {
+        return false
+      } else if (orientation === 'vertical' && this.board[x + i][y] !== null) {
+        return false
+      }
+    }
+
     return true
   }
 
@@ -39,7 +50,6 @@ export default class Gameboard {
       target.hit()
       return true
     } else {
-      this.missedAttacks.push([x, y])
       return false
     }
   }
