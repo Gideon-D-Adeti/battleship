@@ -18,6 +18,12 @@ test('Gameboard can receive attacks and register hits', () => {
   expect(ship.hits).toBe(1)
 })
 
+test('Gameboard can receive attacks and register misses', () => {
+  const board = new Gameboard()
+  board.receiveAttack(0, 0)
+  expect(board.missedAttacks).toContainEqual([0, 0])
+})
+
 test('Gameboard can report whether all ships are sunk', () => {
   const board = new Gameboard()
   const ship = new Ship(3)

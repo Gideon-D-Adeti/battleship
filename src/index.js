@@ -11,8 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const { player, computer } = setupGame()
 
-  player.renderBoard()
-  computer.renderBoard()
+  DOMM.renderPlayerBoard(player)
 
   DOMM.startButton.addEventListener('click', () => {
     startGame(player, computer)

@@ -4,6 +4,7 @@ export default class Gameboard {
       .fill(null)
       .map(() => Array(10).fill(null))
     this.ships = []
+    this.missedAttacks = []
   }
 
   placeShip (ship, x, y, orientation) {
@@ -50,6 +51,7 @@ export default class Gameboard {
       target.hit()
       return true
     } else {
+      this.missedAttacks.push([x, y])
       return false
     }
   }

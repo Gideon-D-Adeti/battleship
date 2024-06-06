@@ -21,4 +21,19 @@ export default class DOMManipulation {
       `.${boardType} .gameboard .cell[data-row="${x + 1}"][data-col="${y + 1}"]`
     )
   }
+
+  renderPlayerBoard (player) {
+    const board = document.querySelector('.player .gameboard')
+
+    for (let x = 0; x < 10; x++) {
+      for (let y = 0; y < 10; y++) {
+        const cell = board.querySelector(
+          `.cell[data-row="${x + 1}"][data-col="${y + 1}"]`
+        )
+        if (player.gameboard.board[x][y] !== null) {
+          cell.classList.add('player-ship')
+        }
+      }
+    }
+  }
 }
