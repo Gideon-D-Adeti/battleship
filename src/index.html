@@ -1,58 +1,58 @@
-<!DOCTYPE html>
-<html lang="en">
+    <!DOCTYPE html>
+    <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Battleship</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/css/materialdesignicons.min.css">
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Battleship</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/css/materialdesignicons.min.css">
+    </head>
 
-<body>
-    <header>
-        <h1 class="title">Battleship</h1>
-        <p class="notification">Place your ships.</p>
-        <div></div>
-    </header>
-    <main>
-        <div class="gameboards">
-            <div class="player">
-                <p>Your board</p>
-                <div class="gameboard">
+    <body>
+        <header>
+            <h1 class="title">Battleship</h1>
+            <p class="notification">Place your ships.</p>
+            <div></div>
+        </header>
+        <main>
+            <div class="gameboards">
+                <div class="player">
+                    <p>Your board</p>
+                    <div class="gameboard">
 
+                    </div>
+                </div>
+                <div class="computer">
+                    <p>Computer's board</p>
+                    <div class="gameboard">
+
+                    </div>
+                    <button class="start-button">Start Game</button>
                 </div>
             </div>
-            <div class="computer">
-                <p>Computer's board</p>
-                <div class="gameboard">
+            <div>
+                <div class="randomize">
+                    <p>Randomize</p>
+                    <span class="mdi mdi-shuffle"></span>
+                </div>
+            </div>
+            <div class="settings">
+                <p>Settings:</p>
+                <div class="checkboxes">
+                    <div>
+                        <input type="checkbox" name="mark-verified" id="mark-verified">
+                        <label for="mark-verified">Mark verified empty cells</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" name="" id="">
+                        <label for="sound-on">Sound on</label>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <footer>
+            <p>Author - <a class="author" href="https://github.com/Gideon-D-Adeti" target="_blank">Gideon D. Adeti</a></p>
+        </footer>
+    </body>
 
-                </div>
-                <button class="start-button">Start Game</button>
-            </div>
-        </div>
-        <div>
-            <div class="randomize">
-                <p>Randomize</p>
-                <span class="mdi mdi-shuffle"></span>
-            </div>
-        </div>
-        <div class="settings">
-            <p>Settings:</p>
-            <div class="checkboxes">
-                <div>
-                    <input type="checkbox" name="mark-verified" id="mark-verified">
-                    <label for="mark-verified">Mark verified empty cells</label>
-                </div>
-                <div>
-                    <input type="checkbox" name="" id="">
-                    <label for="sound-on">Sound on</label>
-                </div>
-            </div>
-        </div>
-    </main>
-    <footer>
-        <p>Author - <a class="author" href="https://github.com/Gideon-D-Adeti" target="_blank">Gideon D. Adeti</a></p>
-    </footer>
-</body>
-
-</html>
+    </html>
